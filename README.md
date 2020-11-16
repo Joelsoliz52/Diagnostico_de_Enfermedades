@@ -1,1 +1,1 @@
-# Diagnostico_de_Enfermedades
+# Diagnostico de Enfermedades
