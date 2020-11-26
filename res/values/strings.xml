@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">DiseaseDiagnosisV2</string>
+
+    <string-array name="countries_array">
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+    </string-array>
+    <string name="next"><b>Continuar  </b></string>
+    <string name="welcome">
+        Esta es una aplicación para realizar un chequeo médico breve acerca de enfermedades comunes en la región, sus respuestas se mantendrán anónimas.
+        Sus respuestas serán analizadas y le dirá las posibles causas de los sintomas. Recuerde que:
+    </string>
+    <string name="list1_welcome">• El chequeo es de caracter informativo y no constituye una opinión médica.</string>
+    <string name="list2_welcome">• <b>No usar en un caso de emergencia.</b> En un caso de emergencia, llame al número de emergencia local.</string>
+    <string name="list3_welcome">• <b>Sus datos están a salvo.</b> La información que usted proporcione será anónima y no será compartida con nadie.</string>
+    <string name="diagnosis"><b>Iniciar diagnóstico  </b></string>
+    <string name="diagnosist">Por favor, ingrese sus síntomas:</string>
+    <string name="question">¿Tiene alguno de los siguientes síntomas?</string>
+
+</resources>
