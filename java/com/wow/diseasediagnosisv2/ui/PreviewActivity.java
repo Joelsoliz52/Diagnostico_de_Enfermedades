@@ -9,22 +9,22 @@ import android.widget.LinearLayout;
 
 import com.wow.diseasediagnosisv2.R;
 
-public class InterviewActivity extends AppCompatActivity implements View.OnClickListener {
+public class PreviewActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_interview);
+        setContentView(R.layout.activity_preview);
 
-        LinearLayout next = findViewById(R.id.next);
+        LinearLayout next = findViewById(R.id.description);
         next.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.next:
-                Intent interview2 = new Intent(this, PreviewActivity.class);
+            case R.id.description:
+                Intent interview2 = new Intent(this, DiseaseActivity.class);
                 startActivity(interview2);
                 break;
         }
