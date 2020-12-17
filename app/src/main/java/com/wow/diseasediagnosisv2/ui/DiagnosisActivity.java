@@ -74,7 +74,7 @@ public class DiagnosisActivity extends AppCompatActivity implements Serializable
                     if(continueInterview)
                         startActivity(interview);
                     else {
-                        ArrayList<String> diseases = diagnosis.getDiseases();
+                        String diseases = diagnosis.getDiseases();
                         disease.putExtra("diseases", diseases);
                         startActivity(disease);
                     }

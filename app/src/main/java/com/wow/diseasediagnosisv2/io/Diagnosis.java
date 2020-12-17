@@ -89,7 +89,7 @@ public class Diagnosis{
         for(int i=0; i<length; i++){
             Disease disease = possibleDiseases.get(i);
             if (contains(disease)) {
-                int pos = diseases.indexOf(disease);
+                int pos = indexOf(disease);
                 int newPoints = diseasePoints.get(pos) + 1;
                 diseasePoints.set(pos, newPoints);
             } else {
@@ -99,19 +99,19 @@ public class Diagnosis{
         }
     }
 
-    public ArrayList<String> getDiseases(){
-        ArrayList<String> diseases1 = new ArrayList<>();
+    public String getDiseases(){
+        StringBuilder diseases1 = new StringBuilder();
         int length = diseasePoints.size();
         for(int i=0; i<length; i++){
             int point = diseasePoints.get(i);
             if (point > 2){
                 Disease disease = diseases.get(i);
                 String id = ""+disease.getIdDisease();
-                diseases1.add(id);
+                diseases1.append(" ").append(id);
             }
 
         }
-        return diseases1;
+        return diseases1.toString();
     }
 
     private boolean contains(Disease disease2) {
@@ -122,5 +122,14 @@ public class Diagnosis{
                 return true;
         }
         return false;
+    }
+
+    private int indexOf(Disease disease) {
+        for(int i=0; i<diseases.size(); i++) {
+            Disease actualDisease = diseases.get(i);
+            if(disease.getName().equals(actualDisease.getName()))
+                return i;
+        }
+        return -1;
     }
 }

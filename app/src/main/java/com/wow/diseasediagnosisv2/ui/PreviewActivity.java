@@ -12,20 +12,19 @@ import android.widget.TextView;
 import com.wow.diseasediagnosisv2.R;
 import com.wow.diseasediagnosisv2.io.DatabaseAccess;
 import com.wow.diseasediagnosisv2.model.Disease;
-import com.wow.diseasediagnosisv2.model.SymptomToDisease;
 
 import java.util.ArrayList;
 
-public class PreviewActivity extends AppCompatActivity implements View.OnClickListener {
-    private ArrayList<String> diseasesId;
+public class PreviewActivity extends AppCompatActivity{
+    private String[] diseasesId;
     private ArrayList<Disease> diseases = new ArrayList<>();
-    private LinearLayout layout2 = findViewById(R.id.disease2);
-    private LinearLayout layout3 = findViewById(R.id.disease3);
-    private LinearLayout layout4 = findViewById(R.id.disease4);
-    private TextView tv1 = findViewById(R.id.ds1);
-    private TextView tv2 = findViewById(R.id.ds2);
-    private TextView tv3 = findViewById(R.id.ds3);
-    private TextView tv4 = findViewById(R.id.ds4);
+    private LinearLayout disease2;
+    private LinearLayout disease3;
+    private LinearLayout disease4;
+    private TextView tv1;
+    private TextView tv2;
+    private TextView tv3;
+    private TextView tv4;
 
 
     @Override
@@ -33,22 +32,57 @@ public class PreviewActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
 
-        diseasesId = (ArrayList<String>) getIntent().getStringArrayListExtra("diseases");
+        final String[] id = {""};
+        Intent disease = new Intent(getApplicationContext(), DiseaseActivity.class);
+        disease2 = findViewById(R.id.disease2);
+        disease3 = findViewById(R.id.disease3);
+        disease4 = findViewById(R.id.disease4);
+        tv1 = findViewById(R.id.ds1);
+        tv2 = findViewById(R.id.ds2);
+        tv3 = findViewById(R.id.ds3);
+        tv4 = findViewById(R.id.ds4);
+
+
+        diseasesId = getIntent().getExtras().getString("diseases").split(" ");
         setDiseases();
         textViewDiseases();
 
-        LinearLayout next = findViewById(R.id.description);
-        next.setOnClickListener(this);
-    }
+        LinearLayout disease1 = findViewById(R.id.disease1);
+        disease1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                id[0] = diseasesId[1];
+                disease.putExtra("disease", id[0]);
+                startActivity(disease);
+            }
+        });
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.description:
-                Intent interview2 = new Intent(this, DiseaseActivity.class);
-                startActivity(interview2);
-                break;
-        }
+        disease2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                id[0] = diseasesId[2];
+                disease.putExtra("disease", id[0]);
+                startActivity(disease);
+            }
+        });
+
+        disease3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                id[0] = diseasesId[3];
+                disease.putExtra("disease", id[0]);
+                startActivity(disease);
+            }
+        });
+
+        disease4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                id[0] = diseasesId[4];
+                disease.putExtra("disease", id[0]);
+                startActivity(disease);
+            }
+        });
     }
 
     private void textViewDiseases(){
@@ -65,7 +99,7 @@ public class PreviewActivity extends AppCompatActivity implements View.OnClickLi
             setDisease3();
         }
 
-        if(length == 4) {
+        if(length >= 4) {
             setDisease2();
             setDisease3();
             setDisease4();
@@ -74,19 +108,19 @@ public class PreviewActivity extends AppCompatActivity implements View.OnClickLi
 
     private void setDisease2(){
         Disease disease = diseases.get(1);
-        layout2.setVisibility(View.VISIBLE);
+        disease2.setVisibility(View.VISIBLE);
         tv2.setText(disease.getName());
     }
 
     private void setDisease3(){
         Disease disease = diseases.get(2);
-        layout3.setVisibility(View.VISIBLE);
+        disease3.setVisibility(View.VISIBLE);
         tv3.setText(disease.getName());
     }
 
     private void setDisease4(){
         Disease disease = diseases.get(3);
-        layout4.setVisibility(View.VISIBLE);
+        disease4.setVisibility(View.VISIBLE);
         tv4.setText(disease.getName());
     }
 
@@ -98,15 +132,17 @@ public class PreviewActivity extends AppCompatActivity implements View.OnClickLi
             String name = "";
             String description = "";
             String treatment = "";
-            Cursor c = dataBaseAccess.getDisease(idDisease);
-            while (c.moveToNext()){
-                id = c.getInt(0);
-                name = c.getString(1);
-                description = c.getString(2);
-                treatment = c.getString(3);
+            if(!idDisease.equals("")) {
+                Cursor c = dataBaseAccess.getDisease(idDisease);
+                while (c.moveToNext()) {
+                    id = c.getInt(0);
+                    name = c.getString(1);
+                    description = c.getString(2);
+                    treatment = c.getString(3);
+                }
+                Disease disease = new Disease(id, name, description, treatment);
+                diseases.add(disease);
             }
-            Disease disease = new Disease(id,name,description,treatment);
-            diseases.add(disease);
         }
         dataBaseAccess.close();
     }

@@ -19,7 +19,9 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/logo"
+                android:contentDescription="Logo"
+                tools:ignore="HardcodedText" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -48,11 +50,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/nameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            android:text="@string/app_name"
+            android:textSize="30sp"
             android:gravity="center"/>
     </LinearLayout>
     <ScrollView
@@ -66,54 +68,57 @@
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:background="@drawable/style_border">
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/teal_200"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"
+                    android:textSize="25sp"
+                    android:text="Descripción:"
+                    tools:ignore="HardcodedText" />
+                <TextView
+                    android:id="@+id/descriptionText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10sp"
                     android:layout_marginRight="10sp"
                     android:justificationMode="inter_word"
                     android:text="@string/welcome"
-                    android:textSize="15sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/welcome"
-                    android:textSize="15sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/welcome"
-                    android:textSize="15sp"/>
+                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    tools:ignore="UnusedAttribute" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/treatment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="4dp"
+                android:background="@drawable/style_border">
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/teal_200"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"
+                    android:textSize="25sp"
+                    android:text="Tratamiento:"
+                    tools:ignore="HardcodedText" />
+                <TextView
+                    android:id="@+id/treatmentText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10sp"
                     android:layout_marginRight="10sp"
                     android:justificationMode="inter_word"
                     android:text="@string/welcome"
-                    android:textSize="15sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/welcome"
-                    android:textSize="15sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/welcome"
-                    android:textSize="15sp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/welcome"
-                    android:textSize="15sp"/>
+                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    tools:ignore="UnusedAttribute" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

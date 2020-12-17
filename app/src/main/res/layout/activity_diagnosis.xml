@@ -82,6 +82,7 @@
                     android:singleLine="true"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:popupBackground="@color/teal_200"
                     android:inputType="text" />
             </LinearLayout>
@@ -104,6 +105,8 @@
                     android:layout_gravity="center"
                     android:id="@+id/symptom2"
                     android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:popupBackground="@color/teal_200"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -127,6 +130,8 @@
                     android:layout_gravity="center"
                     android:id="@+id/symptom3"
                     android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:popupBackground="@color/teal_200"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -150,6 +155,8 @@
                     android:layout_gravity="center"
                     android:id="@+id/symptom4"
                     android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:popupBackground="@color/teal_200"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -173,6 +180,8 @@
                     android:layout_gravity="center"
                     android:id="@+id/symptom5"
                     android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:popupBackground="@color/teal_200"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -196,6 +205,8 @@
                     android:layout_gravity="center"
                     android:id="@+id/symptom6"
                     android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:popupBackground="@color/teal_200"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -219,6 +230,8 @@
                     android:layout_gravity="center"
                     android:id="@+id/symptom7"
                     android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:popupBackground="@color/teal_200"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:inputType="text" />

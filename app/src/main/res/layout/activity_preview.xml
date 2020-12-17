@@ -42,44 +42,53 @@
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="25sp"
+                android:text="@string/preDiagnosis"
                 android:textColor="@color/black"
-                android:text="@string/diagnosis"/>
+                android:textSize="30sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/disease1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/ds1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
+                android:gravity="center"
                 android:justificationMode="inter_word"
-                android:text="@string/welcome"
-                android:textSize="15sp"/>
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="UnusedAttribute" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/disease2"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
+
             <TextView
                 android:id="@+id/ds2"
                 android:layout_width="match_parent"
@@ -87,15 +96,18 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:justificationMode="inter_word"
-                android:text="@string/welcome"
-                android:textSize="15sp"/>
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="UnusedAttribute" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/disease3"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
+
             <TextView
                 android:id="@+id/ds3"
                 android:layout_width="match_parent"
@@ -103,15 +115,18 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:justificationMode="inter_word"
-                android:text="@string/welcome"
-                android:textSize="15sp"/>
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="UnusedAttribute" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/disease4"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
+
             <TextView
                 android:id="@+id/ds4"
                 android:layout_width="match_parent"
@@ -119,8 +134,9 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:justificationMode="inter_word"
-                android:text="@string/welcome"
-                android:textSize="15sp"/>
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:ignore="UnusedAttribute" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

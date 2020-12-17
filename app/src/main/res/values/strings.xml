@@ -25,4 +25,5 @@
     <string name="name_app">Hello World!</string>
     <string name="symptom">Ingrese un sintoma</string>
     <string name="ssymptom">Seleccione un sintoma</string>
+    <string name="preDiagnosis">Posibles enfermedades</string>
 </resources>
